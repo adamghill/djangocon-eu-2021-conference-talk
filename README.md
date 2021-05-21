@@ -39,3 +39,6 @@ Article series about how `Unicorn` was built: https://dev.to/adamghill/add-some-
 - Ruby on Rails: [Hotwire](https://hotwire.dev/)
 - [htmx](https://htmx.org/)
   - [django-htmx](https://pypi.org/project/django-htmx/)
+
+## Thanks
+- Thank you to Tim White, Sean Klein, and Hugo Estrada for feedback on early versions of the talk.

@@ -1,0 +1,51 @@
+{% load reactor %}
+
+<div {{ header }} class="columns">
+  <div class="column is-half">
+    <!-- add todo -->
+    <div class="field">
+      <label class="label">Add Task</label>
+
+      <div class="control">
+        <input
+          class="input"
+          type="text"
+          placeholder="Search near and far"
+          name="new_task"
+          value="{{ new_task }}"
+          @keyup="task"
+        />
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link" @click.prevent="add_todo">Add</button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light" @click.prevent="cancel">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- end add todo -->
+
+  <!-- todos -->
+  <div class="column is-half">
+    <p class="pb-1">
+      <strong>Current Tasks</strong>
+    </p>
+
+    {% if not todos %}
+    <p>None, yet!</p>
+    {% else %}
+    <ul>
+      {% for todo in todos %}
+      <li>{{ todo.task }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  <!-- end todos -->
+</div>

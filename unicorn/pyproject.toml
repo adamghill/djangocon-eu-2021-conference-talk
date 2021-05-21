@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "djangocon-eu-unicorn"
+version = "0.1.0"
+description = ""
+authors = ["Adam Hill <github@adamghill.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Django = "^3.2.3"
+django-unicorn = "^0.27.2"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^21.5b1", allow-prereleases = true}
+poethepoet = "^0.10.0"
+
+[tool.poe.tasks]
+m = "./manage.py"
+r = "./manage.py runserver 0:8005"
+ma = "./manage.py makemigrations"
+mi = "./manage.py migrate"
+md = ["ma", "mi"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

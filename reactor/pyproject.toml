@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "reactor-example"
+version = "0.1.0"
+description = ""
+authors = ["Adam Hill <github@adamghill.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Django = "^3.2.3"
+django-reactor = "^2.2.1-beta.0"
+channels-redis = "^3.2.0"
+
+[tool.poetry.dev-dependencies]
+poethepoet = "^0.10.0"
+black = "^21.5b1"
+
+[tool.poe.tasks]
+m = "./manage.py"
+r = "./manage.py runserver 0:8003"
+ma = "./manage.py makemigrations"
+mi = "./manage.py migrate"
+md = ["ma", "mi"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
